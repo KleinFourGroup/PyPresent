@@ -22,6 +22,12 @@ def extractDir(loc, dest):
     fin.close()
     return snum
 
+def extractHere(loc):
+    fin = ZipFile(loc, 'r')
+    for slide in fin.namelist():
+        fin.extract(slide)
+    fin.close()
+
 def zipDir(loc, dest):
     fout = ZipFile(dest, 'w')
     for top, dirs, names in os.walk(loc, topdown=False):

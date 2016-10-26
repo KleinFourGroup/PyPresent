@@ -27,7 +27,7 @@ def cleanup(name):
 
 def fileToSlides(loc, num_slides, start = 1, end = "len"):
     try:
-        img_file = wand.image.Image(filename=loc)
+        img_file = wand.image.Image(filename=loc, resolution=300)
     except:
         print "ERROR: BAD FILE"
         return num_slides
